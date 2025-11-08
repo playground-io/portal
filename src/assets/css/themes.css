@@ -1,0 +1,31 @@
+.light {
+  --top-bar-bg-color: #414141;
+  
+  --top-bar-btn-txt-color: rgba(255, 255, 255, 0.8);
+  --top-bar-btn-hover: rgba(255, 255, 255, 0.3);
+  --top-bar-btn-hover-txt-color: rgba(255, 255, 255, 1);
+  --top-bar-btn-on: rgba(255, 255, 255, 0.2);
+  --top-bar-btn-on-txt-color: rgba(255, 255, 255, 1);
+  --top-bar-btn-active: rgba(255, 255, 255, 0.1);
+  --top-bar-btn-active-txt-color: rgba(255, 255, 255, 0.4);
+
+  --bottom-bar-bg-color: #414141;
+  --bottom-bar-color: rgb(255, 255, 255); 
+}
+
+.dark {
+  --top-bar-bg: #1c1c1c;
+  --top-bar-txt: #ffffff;
+
+  --top-bar-btn-bg: transparent;
+  --top-bar-btn-txt: rgba(255, 255, 255, 0.8);
+  --top-bar-btn-bg-hover: rgba(255, 255, 255, 0.3);
+  --top-bar-btn-txt-hover: rgba(255, 255, 255, 1);
+  --top-bar-btn-bg-on: rgba(255, 255, 255, 0.2);
+  --top-bar-btn-txt-on: rgba(255, 255, 255, 1);
+  --top-bar-btn-bg-active: rgba(255, 255, 255, 0.1);
+  --top-bar-btn-txt-active: rgba(255, 255, 255, 0.4);
+
+  --bottom-bar-bg: #dddddd;
+  --bottom-bar-txt: #1c1c1c;
+}
