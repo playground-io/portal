@@ -1,9 +1,3 @@
-<script setup>
-  import TopBar from './components/TopBar.vue';
-  import MainContainer from './components/MainContainer.vue';
-  import BottomBar from './components/BottomBar.vue';
-</script>
-
 <template>
   <div class="global-container">
     <header class="header-container">
@@ -17,6 +11,12 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+  import TopBar from './components/TopBar.vue';
+  import MainContainer from './components/MainContainer.vue';
+  import BottomBar from './components/BottomBar.vue';
+</script>
 
 <style scoped>
 .global-container {

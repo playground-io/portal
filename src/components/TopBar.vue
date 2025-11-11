@@ -1,7 +1,3 @@
-<script setup>
-  import TopBarButton from './TopBarButton.vue';
-</script>
-
 <template>
   <nav class="top-bar">
     <div class="top-bar-left">
@@ -24,6 +20,10 @@
     </div>
   </nav>
 </template>
+
+<script setup>
+  import TopBarButton from './TopBarButton.vue';
+</script>
 
 <style scoped>
 .top-bar {
