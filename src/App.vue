@@ -28,7 +28,6 @@
 
 .header-container {
   display: block;
-  height: 100%;
 }
 
 .main-container {

@@ -1,6 +1,6 @@
 <script setup>
   import { useI18n } from 'vue-i18n'; // 1. Import the hook
-  const { locale, t } = useI18n(); // 2. Call the hook to get what you need
+  const { locale } = useI18n(); // 2. Call the hook to get what you need
   locale.value = 'es'; // Correctly updates the global state
 </script>
 

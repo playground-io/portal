@@ -18,13 +18,17 @@
   --top-bar-txt: #ffffff;
 
   --top-bar-btn-bg: transparent;
-  --top-bar-btn-txt: rgba(255, 255, 255, 0.8);
+  --top-bar-btn-txt: rgba(255, 255, 255, 0.6);
   --top-bar-btn-bg-hover: rgba(255, 255, 255, 0.3);
   --top-bar-btn-txt-hover: rgba(255, 255, 255, 1);
-  --top-bar-btn-bg-on: rgba(255, 255, 255, 0.2);
-  --top-bar-btn-txt-on: rgba(255, 255, 255, 1);
-  --top-bar-btn-bg-active: rgba(255, 255, 255, 0.1);
-  --top-bar-btn-txt-active: rgba(255, 255, 255, 0.4);
+  --top-bar-btn-bg-active: rgba(255, 255, 255, 0.15);
+  --top-bar-btn-txt-active: rgba(255, 255, 255, 0.5);
+  --top-bar-btn-bg-sw: rgba(255, 255, 255, 0.2);
+  --top-bar-btn-txt-sw: rgba(255, 255, 255, 0.5);
+  --top-bar-btn-bg-sw-hover: rgba(255, 255, 255, 0.25);
+  --top-bar-btn-txt-sw-hover: rgba(255, 255, 255, 0.7);
+  --top-bar-btn-bg-sw-active: rgba(255, 255, 255, 0.1);
+  --top-bar-btn-txt-sw-active: rgba(255, 255, 255, 0.4);
 
   --bottom-bar-bg: #dddddd;
   --bottom-bar-txt: #1c1c1c;

@@ -5,15 +5,10 @@
 <template>
   <nav class="top-bar">
     <div class="top-bar-left">
-      <TopBarButton 
-        label="user-services"
-        tooltip="User Services"
-        icon="icon-apps"
-        mode="toggle"
-        @click="handleNavigation('profile')">
-      </TopBarButton>
-      <button class="top-bar-button" id="user-services"></button>
-      <button class="top-bar-button" id="admin-services"></button>
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="icon-apps"
+        @click="handleNavigation('profile')" />
+      <TopBarButton label="services-admin" tooltip="Services Admin" mode="normal" iconName="icon-apps"
+        @click="handleNavigation('profile')" />
       <div class="top-bar-branding" id="branding"></div>
     </div>
     <div class="top-bar-center">
@@ -32,7 +27,7 @@
 
 <style scoped>
 .top-bar {
-  display: flex;
+  display: inline-flex;
   position: fixed;
   justify-content: space-between;
   top: 0;
@@ -42,7 +37,7 @@
   color: var(--top-bar-txt);
 }
 
-/*.top-bar-left, .top-bar-center, .top-bar-right {
-
-}*/
+.top-bar-left, .top-bar-center, .top-bar-right {
+  height: 100%;
+}
 </style>
