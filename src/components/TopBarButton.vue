@@ -1,16 +1,12 @@
 <template>
-  <button
-    :class="[{ 'switched': isToggle && isActive }]"
-    @click="handleClick">
-    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 3 3 h 4 v 4 h -4 z M 10 3 h 4 v 4 h -4 z M 17 3 h 4 v 4 h -4 z M 3 10 h 4 v 4 h -4 z M 10 10 h 4 v 4 h -4 z M 17 10 h 4 v 4 h -4 z M 3 17 h 4 v 4 h -4 z M 10 17 h 4 v 4 h -4 z M 17 17 h 4 v 4 h -4 z" 
-  />
-</svg>
+  <button :class="[{ 'switched': isToggle && isActive }]" @click="handleClick">
+    <AppIcon :name=props.iconName :size="18" />
   </button>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
+import AppIcon from './AppIcons.vue';
 
 const props = defineProps({
   label: {
@@ -69,6 +65,10 @@ const handleClick = () => {
     fill: var(--top-bar-btn-txt-active);
     stroke: var(--top-bar-btn-txt-active);
   }
+  button:focus-visible {
+    outline: 1px dashed rgba(255,255,255,1);
+    outline-offset:-1px;
+  }
   button.switched {
     background-color: var(--top-bar-btn-bg-sw);
     color: var(--top-bar-btn-txt-sw);
@@ -86,5 +86,9 @@ const handleClick = () => {
     color: var(--top-bar-btn-txt-sw-active);
     fill: var(--top-bar-btn-txt-sw-active);
     stroke: var(--top-bar-btn-txt-sw-active);
+  }
+  button.switched:focus-visible {
+    outline: 1px dashed rgba(255,255,255,1);
+    outline-offset:-1px;
   }
 </style>

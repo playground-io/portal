@@ -36,5 +36,6 @@
 
 .footer-container {
   display: block;
+  border: 1px white solid;
 }
 </style>

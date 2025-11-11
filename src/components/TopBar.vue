@@ -1,9 +1,9 @@
 <template>
   <nav class="top-bar">
     <div class="top-bar-left">
-      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="icon-apps"
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="apps"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="services-admin" tooltip="Services Admin" mode="normal" iconName="icon-apps"
+      <TopBarButton label="services-admin" tooltip="Services Admin" mode="normal" iconName="menu"
         @click="handleNavigation('profile')" />
       <div class="top-bar-branding" id="branding"></div>
     </div>
@@ -11,11 +11,18 @@
       <div class="search-container"></div>
     </div>
     <div class="top-bar-right">
-      <button class="top-bar-button" id="portal-shell"></button>
-      <button class="top-bar-button" id="running-tasks"></button>
-      <button class="top-bar-button" id="notifications"></button>
-      <button class="top-bar-button" id="support"></button>
-      <button class="top-bar-button" id="feedback"></button>
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="console"
+        @click="handleNavigation('profile')" />
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="notifications"
+        @click="handleNavigation('profile')" />
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="tasks"
+        @click="handleNavigation('profile')" />
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="settings"
+        @click="handleNavigation('profile')" />
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="support"
+        @click="handleNavigation('profile')" />
+      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="feedback"
+        @click="handleNavigation('profile')" />
       <div class="top-bar-branding" id="user-avatar"></div>
     </div>
   </nav>
