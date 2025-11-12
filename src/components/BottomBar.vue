@@ -7,8 +7,7 @@
 <template>
   <div class="bottom-bar">
     <div class="bottom-bar-left">
-      bottom-bar-left
-      <h3>{{ $t('nav.home') }}</h3>
+      {{ $t('nav.home') }}
     </div>
     <div class="bottom-bar-center">
       bottom-bar-center
@@ -22,8 +21,6 @@
 <style scoped>
 .bottom-bar {
   display: flex;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   justify-content: space-between;
   align-items: center;

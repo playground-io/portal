@@ -35,9 +35,9 @@
 <style scoped>
 .top-bar {
   display: inline-flex;
-  position: fixed;
+  
   justify-content: space-between;
-  top: 0;
+  
   width: 100%;
   height: var(--top-bar-height);
   background-color: var(--top-bar-bg);
@@ -45,6 +45,6 @@
 }
 
 .top-bar-left, .top-bar-center, .top-bar-right {
-  height: 100%;
+
 }
 </style>
