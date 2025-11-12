@@ -44,6 +44,6 @@ const iconPath = computed(() => {
 .app-icon {
   stroke-linecap:square;
   stroke-linejoin:square;
-  stroke-width: 2;
+  stroke-width: 1.5;
 }
 </style>

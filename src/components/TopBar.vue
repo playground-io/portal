@@ -8,20 +8,20 @@
       <div class="top-bar-branding" id="branding"></div>
     </div>
     <div class="top-bar-center">
-      <div class="search-container"></div>
+      <SearchContainer />
     </div>
     <div class="top-bar-right">
-      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="console"
+      <TopBarButton label="portal-shell" tooltip="Portal Shell" mode="toggle" iconName="console"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="notifications"
+      <TopBarButton label="notifications" tooltip="Notifications" mode="normal" iconName="notifications"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="tasks"
+      <TopBarButton label="running-tasks" tooltip="Running Tasks" mode="toggle" iconName="tasks"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="settings"
+      <TopBarButton label="settings" tooltip="Settings" mode="normal" iconName="settings"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="support"
+      <TopBarButton label="support" tooltip="Support" mode="normal" iconName="support"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="cloud-apps" tooltip="Cloud Apps" mode="toggle" iconName="feedback"
+      <TopBarButton label="fedback" tooltip="Feedback" mode="normal" iconName="feedback"
         @click="handleNavigation('profile')" />
       <div class="top-bar-branding" id="user-avatar"></div>
     </div>
@@ -30,18 +30,17 @@
 
 <script setup>
   import TopBarButton from './TopBarButton.vue';
+  import SearchContainer from './SearchContainer.vue';
 </script>
 
 <style scoped>
 .top-bar {
   display: inline-flex;
-  
   justify-content: space-between;
-  
   width: 100%;
   height: var(--top-bar-height);
-  background-color: var(--top-bar-bg);
   color: var(--top-bar-txt);
+  background-color: var(--top-bar-bg);
 }
 
 .top-bar-left, .top-bar-center, .top-bar-right {

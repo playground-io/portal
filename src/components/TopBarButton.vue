@@ -1,6 +1,9 @@
 <template>
-  <button :class="[{ 'switched': isToggle && isActive }]" @click="handleClick">
-    <AppIcon :name=props.iconName :size="18" />
+  <button
+    :class="[{ 'switched': isToggle && isActive }]"
+    :title=108tooltip
+    @click="handleClick">
+    <AppIcon :name=props.iconName :size="20" />
   </button>
 </template>
 

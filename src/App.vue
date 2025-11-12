@@ -4,25 +4,7 @@
       <TopBar />
     </header>
     <main class="main-container">
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
-      <p>kwsk</p>
+      <MainContent />
     </main>
     <footer class="footer-container">
       <BottomBar />
@@ -42,17 +24,15 @@
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr;
   height: 100%;
-  overflow-y: auto;
 }
 
 .header-container {
   display: block;
 }
 
-.main-content {
+.main-container {
   display: block;
   overflow-y: auto;
-
 }
 
 .footer-container {
