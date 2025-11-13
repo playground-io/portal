@@ -5,7 +5,7 @@
         @click="handleNavigation('profile')" />
       <TopBarButton label="services-admin" tooltip="Services Admin" mode="normal" iconName="menu"
         @click="handleNavigation('profile')" />
-      <div class="top-bar-branding" id="branding"></div>
+      <TopBarBranding />
     </div>
     <div class="top-bar-center">
       <SearchContainer />
@@ -23,7 +23,7 @@
         @click="handleNavigation('profile')" />
       <TopBarButton label="fedback" tooltip="Feedback" mode="tab" iconName="feedback"
         @click="handleNavigation('profile')" />
-      <div class="top-bar-branding" id="user-avatar"></div>
+      <AvatarContainer />
     </div>
   </nav>
 </template>
@@ -31,6 +31,8 @@
 <script setup>
   import TopBarButton from './TopBarButton.vue';
   import SearchContainer from './SearchContainer.vue';
+  import AvatarContainer from './AvatarContainer.vue';
+  import TopBarBranding from './TopBarBranding.vue';
 </script>
 
 <style scoped>
@@ -46,6 +48,20 @@
 .top-bar-left, .top-bar-center, .top-bar-right {
   display:flex;
   align-items: center;
+  width: 100%;
+}
 
+.top-bar-left {
+  justify-content: left;
+}
+
+.top-bar-right {
+  justify-content: right;
+}
+
+.top-bar-center { 
+  justify-content: center;
+  max-width: 450px;
+  min-width: 280px;
 }
 </style>

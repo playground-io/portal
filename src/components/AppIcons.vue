@@ -12,9 +12,10 @@
 import { computed } from 'vue'; 
 
 // --- ICON REGISTRY ---
+// apps: '<path stroke="none" fill="currenColor" d="m18.492 2.33l3.179 3.18a2.25 2.25 0 0 1 0 3.181l-2.584 2.584A2.25 2.25 0 0 1 21 13.5v5.25A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V5.25A2.25 2.25 0 0 1 5.25 3h5.25a2.25 2.25 0 0 1 2.225 1.915L15.31 2.33a2.25 2.25 0 0 1 3.182 0ZM4.5 18.75c0 .414.336.75.75.75h5.999l.001-6.75H4.5v6Zm8.249.75h6.001a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75h-6.001v6.75ZM10.5 4.5H5.25a.75.75 0 0 0-.75.75v6h6.75v-6a.75.75 0 0 0-.75-.75Zm2.25 4.81v1.94h1.94l-1.94-1.94Z" />',
 const ICON_REGISTRY = {
-  apps: '<path stroke="none" fill="currenColor" d="m18.492 2.33l3.179 3.18a2.25 2.25 0 0 1 0 3.181l-2.584 2.584A2.25 2.25 0 0 1 21 13.5v5.25A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V5.25A2.25 2.25 0 0 1 5.25 3h5.25a2.25 2.25 0 0 1 2.225 1.915L15.31 2.33a2.25 2.25 0 0 1 3.182 0ZM4.5 18.75c0 .414.336.75.75.75h5.999l.001-6.75H4.5v6Zm8.249.75h6.001a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75h-6.001v6.75ZM10.5 4.5H5.25a.75.75 0 0 0-.75.75v6h6.75v-6a.75.75 0 0 0-.75-.75Zm2.25 4.81v1.94h1.94l-1.94-1.94Z" />',
-  menu: '<path stroke="currenColor" fill="none" d="M4 5h18M4 12h18M4 19h18" />',
+  apps: '<path stroke="correntColor" fill="none" d="M 4 4  h 7  a 1 1 0 0 1 1 1  v 7  a 1 1 0 0 1 -1 1  h -7  a 1 1 0 0 1 -1 -1  v -7  a 1 1 0 0 1 1 -1  z M 4 13 h 7  a 1 1 0 0 1 1 1  v 7  a 1 1 0 0 1 -1 1  h -7  a 1 1 0 0 1 -1 -1  v -7  a 1 1 0 0 1 1 -1 z M13 13 h 7  a 1 1 0 0 1 1 1  v 7  a 1 1 0 0 1 -1 1  h -7  a 1 1 0 0 1 -1 -1  v -7  a 1 1 0 0 1 1 -1  z "/> <path stroke="none" fill="correntColor" d=" M 9.414 10.586 L 12.414 7.586 a 1 1 0 0 1 1.414 0 L 16.414 10.586 a 1 1 0 0 1 0 1.414 L 13.414 15.414 a 1 1 0 0 1 -1.414 0 L 8.586 12.414 a 1 1 0 0 1 0 -1.414 z" />',
+  menu: '<path stroke="currenColor" fill="none" d="M4 6h18M4 12h18M4 18h18" />',
   console: '<path stroke="currentColor" fill="none" d="M13 16h5M6 8l4 4l-4 4 M2 18V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z" />',
   notifications: '<path stroke="currentColor" fill="none" d="M2.53 14.77c-.213 1.394.738 2.361 1.902 2.843c4.463 1.85 10.673 1.85 15.136 0c1.164-.482 2.115-1.45 1.902-2.843c-.13-.857-.777-1.57-1.256-2.267c-.627-.924-.689-1.931-.69-3.003C19.525 5.358 16.157 2 12 2S4.475 5.358 4.475 9.5c0 1.072-.062 2.08-.69 3.003c-.478.697-1.124 1.41-1.255 2.267 M8 19c.458 1.725 2.076 3 4 3c1.925 0 3.541-1.275 4-3" />',
   tasks: '<path stroke="currentColor" fill="none" d="M2.5 12.89H7l3-5l4 9l3-5h4.43 M12 21.5a9.5 9.5 0 1 0 0-19a9.5 9.5 0 0 0 0 19" />',
@@ -43,8 +44,8 @@ const iconPath = computed(() => {
 
 <style scoped>
 .app-icon {
-  stroke-linecap:square;
-  stroke-linejoin:square;
-  stroke-width: 1.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 2;
 }
 </style>

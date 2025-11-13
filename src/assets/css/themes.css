@@ -36,6 +36,10 @@
   --top-bar-btn-bg-tab-active: rgba(255, 255, 255, 0.9);
   --top-bar-btn-txt-tab-active: rgba(0, 0, 0, 0.8);
 
+  --search-bg-color:#c7c7c7;
+  --search-placeholder-color: grey;
+  --search-text-color: #2c2c2c;
+
   --bottom-bar-bg: #dddddd;
   --bottom-bar-txt: #1c1c1c;
 }

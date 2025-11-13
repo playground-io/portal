@@ -12,36 +12,39 @@
 <style scoped>
 .search-container {
   display: inline-flex;
-  height: 70%;
+  height: 65%;
   border-radius: 2px;
   align-items: center;
+  gap: 5px;
   padding: 0 5px;
-  min-width: 364px;
-  max-width: 520px;
-  background-color: #e1dfdd;
-  stroke: #000000;
+  width: 100%;
+  background-color: var(--search-bg-color);
+  stroke: var(--search-placeholder-color);
 }
 
 .search-container input {
   border: transparent;
   outline: transparent;
   background-color: transparent;
-  color: #1b1b1b;
+  color: var(--search-placeholder-color);
   height: 100%;
   width: 100%;
-  padding: 0 8px;
   font-size: 13px;
 }
 
+.search-container input:focus{
+  color: var(--search-text-color);
+}
+
 .search-container input::placeholder {
-  color: grey;
+  color: var(--search-placeholder-color);
 }
 
 .search-container:focus-within {
-  background-color: #e1dfdd;
+  background-color: white;
 }
 .search-container:focus-within .search-icon  {
-  stroke: #1b1b1b;
+  stroke: var(--search-text-color);
   transform: scale(-1,1);
 }
 </style>
