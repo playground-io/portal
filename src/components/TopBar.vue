@@ -13,15 +13,15 @@
     <div class="top-bar-right">
       <TopBarButton label="portal-shell" tooltip="Portal Shell" mode="toggle" iconName="console"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="notifications" tooltip="Notifications" mode="normal" iconName="notifications"
-        @click="handleNavigation('profile')" />
       <TopBarButton label="running-tasks" tooltip="Running Tasks" mode="toggle" iconName="tasks"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="settings" tooltip="Settings" mode="normal" iconName="settings"
+      <TopBarButton label="notifications" tooltip="Notifications" mode="tab" iconName="notifications"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="support" tooltip="Support" mode="normal" iconName="support"
+      <TopBarButton label="settings" tooltip="Settings" mode="tab" iconName="settings"
         @click="handleNavigation('profile')" />
-      <TopBarButton label="fedback" tooltip="Feedback" mode="normal" iconName="feedback"
+      <TopBarButton label="support" tooltip="Support" mode="tab" iconName="support"
+        @click="handleNavigation('profile')" />
+      <TopBarButton label="fedback" tooltip="Feedback" mode="tab" iconName="feedback"
         @click="handleNavigation('profile')" />
       <div class="top-bar-branding" id="user-avatar"></div>
     </div>
@@ -44,6 +44,8 @@
 }
 
 .top-bar-left, .top-bar-center, .top-bar-right {
+  display:flex;
+  align-items: center;
 
 }
 </style>

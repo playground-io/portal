@@ -23,12 +23,18 @@
   --top-bar-btn-txt-hover: rgba(255, 255, 255, 0.75);
   --top-bar-btn-bg-active: rgba(255, 255, 255, 0.2);
   --top-bar-btn-txt-active: rgba(255, 255, 255, 1);
-  --top-bar-btn-bg-sw: rgba(255, 255, 255, 0.2);
-  --top-bar-btn-txt-sw: rgba(255, 255, 255, 1);
-  --top-bar-btn-bg-sw-hover: rgba(255, 255, 255, 0.25);
-  --top-bar-btn-txt-sw-hover: rgba(255, 255, 255, 1);
-  --top-bar-btn-bg-sw-active: rgba(255, 255, 255, 0.1);
-  --top-bar-btn-txt-sw-active: rgba(255, 255, 255, 0.4);
+  --top-bar-btn-bg-toggle: rgba(255, 255, 255, 0.2);
+  --top-bar-btn-txt-toggle: rgba(255, 255, 255, 1);
+  --top-bar-btn-bg-toggle-hover: rgba(255, 255, 255, 0.25);
+  --top-bar-btn-txt-toggle-hover: rgba(255, 255, 255, 1);
+  --top-bar-btn-bg-toggle-active: rgba(255, 255, 255, 0.1);
+  --top-bar-btn-txt-toggle-active: rgba(255, 255, 255, 0.4);
+  --top-bar-btn-bg-tab: rgba(255, 255, 255, 1);
+  --top-bar-btn-txt-tab: rgb(0, 0, 0, 1);
+  --top-bar-btn-bg-tab-hover: rgba(255, 255, 255, 1);
+  --top-bar-btn-txt-tab-hover: rgb(0, 0, 0, 0.5);
+  --top-bar-btn-bg-tab-active: rgba(255, 255, 255, 0.9);
+  --top-bar-btn-txt-tab-active: rgba(0, 0, 0, 0.8);
 
   --bottom-bar-bg: #dddddd;
   --bottom-bar-txt: #1c1c1c;

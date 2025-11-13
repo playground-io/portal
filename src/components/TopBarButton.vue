@@ -1,9 +1,9 @@
 <template>
   <button
-    :class="[{ 'switched': isToggle && isActive }]"
-    :title=108tooltip
+    :class="{ [props.mode]: isToggle && isActive }"
+    :title=props.tooltip
     @click="handleClick">
-    <AppIcon :name=props.iconName :size="20" />
+    <AppIcon :name=props.iconName :size=16+ />
   </button>
 </template>
 
@@ -24,7 +24,7 @@ const props = defineProps({
   mode: {
     type: String,
     default: "normal",
-    validator: (value) => ['normal', 'toggle'].includes(value)
+    validator: (value) => ['normal', 'toggle', 'tab'].includes(value)
   },
   iconName: {
     type: [String, null]
@@ -32,7 +32,7 @@ const props = defineProps({
 });
 
 const isActive = ref(false);
-const isToggle = computed(() => props.mode === 'toggle');
+const isToggle = computed(() => ['toggle', 'tab'].includes(props.mode));
 
 const handleClick = () => {
   if (isToggle.value) {
@@ -54,7 +54,6 @@ const handleClick = () => {
     color: var(--top-bar-btn-txt);
     fill: var(--top-bar-btn-txt);
     stroke: var(--top-bar-btn-txt);
-    stroke-width: 0;
   }
   button:hover {
     background-color: var(--top-bar-btn-bg-hover);
@@ -72,26 +71,48 @@ const handleClick = () => {
     outline: 1px dashed rgba(255,255,255,1);
     outline-offset:-1px;
   }
-  button.switched {
-    background-color: var(--top-bar-btn-bg-sw);
-    color: var(--top-bar-btn-txt-sw);
-    fill: var(--top-bar-btn-txt-sw);
-    stroke: var(--top-bar-btn-txt-sw);
+  button.toggle {
+    background-color: var(--top-bar-btn-bg-toggle);
+    color: var(--top-bar-btn-txt-toggle);
+    fill: var(--top-bar-btn-txt-toggle);
+    stroke: var(--top-bar-btn-txt-toggle);
   }
-  button.switched:hover {
-    background-color: var(--top-bar-btn-bg-sw-hover);
-    color: var(--top-bar-btn-txt-sw-hover);
-    fill: var(--top-bar-btn-txt-sw-hover);
-    stroke: var(--top-bar-btn-txt-sw-hover);
+  button.toggle:hover {
+    background-color: var(--top-bar-btn-bg-toggle-hover);
+    color: var(--top-bar-btn-txt-toggle-hover);
+    fill: var(--top-bar-btn-txt-toggle-hover);
+    stroke: var(--top-bar-btn-txt-toggle-hover);
   }
-  button.switched:active {
-    background-color: var(--top-bar-btn-bg-sw-active);
-    color: var(--top-bar-btn-txt-sw-active);
-    fill: var(--top-bar-btn-txt-sw-active);
-    stroke: var(--top-bar-btn-txt-sw-active);
+  button.toggle:active {
+    background-color: var(--top-bar-btn-bg-toggle-active);
+    color: var(--top-bar-btn-txt-toggle-active);
+    fill: var(--top-bar-btn-txt-toggle-active);
+    stroke: var(--top-bar-btn-txt-toggle-active);
   }
-  button.switched:focus-visible {
+  button.toggle:focus-visible {
     outline: 1px dashed rgba(255,255,255,1);
+    outline-offset:-1px;
+  }
+    button.tab {
+    background-color: var(--top-bar-btn-bg-tab);
+    color: var(--top-bar-btn-txt-tab);
+    fill: var(--top-bar-btn-txt-tab);
+    stroke: var(--top-bar-btn-txt-tab);
+  }
+  button.tab:hover {
+    background-color: var(--top-bar-btn-bg-tab-hover);
+    color: var(--top-bar-btn-txt-tab-hover);
+    fill: var(--top-bar-btn-txt-tab-hover);
+    stroke: var(--top-bar-btn-txt-tab-hover);
+  }
+  button.tab:active {
+    background-color: var(--top-bar-btn-bg-tab-active);
+    color: var(--top-bar-btn-txt-tab-active);
+    fill: var(--top-bar-btn-txt-tab-active);
+    stroke: var(--top-bar-btn-txt-tab-active);
+  }
+  button.tab:focus-visible {
+    outline: 1px dashed rgb(0, 0, 0);
     outline-offset:-1px;
   }
 </style>
