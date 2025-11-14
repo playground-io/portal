@@ -50,11 +50,12 @@
   padding: 0 12px;
 }
 .user-account-wrapper .account {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .user-account-wrapper .company {
-  font-size: 0.96rem;
+  font-size: 1rem;
   text-transform:uppercase;
+  font-weight: 600;
 }
 .user-picture {
   width: 30px;

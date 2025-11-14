@@ -23,6 +23,7 @@
 }
 
 .search-container input {
+  font-family: inherit;
   border: transparent;
   outline: transparent;
   background-color: transparent;
