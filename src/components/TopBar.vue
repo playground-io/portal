@@ -8,7 +8,7 @@
       <TopBarBranding />
     </div>
     <div class="top-bar-center">
-      <SearchContainer />
+      <SearchBox />
     </div>
     <div class="top-bar-right">
       <TopBarButton label="portal-shell" tooltip="Portal Shell" mode="toggle" iconName="console"
@@ -30,7 +30,7 @@
 
 <script setup>
   import TopBarButton from './TopBarButton.vue';
-  import SearchContainer from './SearchContainer.vue';
+  import SearchBox from './SearchBox.vue';
   import AvatarContainer from './AvatarContainer.vue';
   import TopBarBranding from './TopBarBranding.vue';
 </script>
@@ -45,23 +45,18 @@
   background-color: var(--top-bar-bg);
 }
 
-.top-bar-left, .top-bar-center, .top-bar-right {
-  display:flex;
-  align-items: center;
-  width: 100%;
-}
-
 .top-bar-left {
   justify-content: left;
 }
 
-.top-bar-right {
-  justify-content: right;
-}
-
 .top-bar-center { 
   justify-content: center;
-  max-width: 450px;
-  min-width: 280px;
+  max-width: 600px;
+  min-width: 250px;
+  width: 100%;
+}
+
+.top-bar-right {
+  justify-content: right;
 }
 </style>

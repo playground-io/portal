@@ -1,0 +1,11 @@
+{
+  "Network": "#0078d4",      
+  "Database": "#009933",
+  "Container": "#ffaa00",
+  "Storage": "#663399",
+  "Security": "#cc0000",
+  "AppService": "#42b983",
+  "Compute": "#0000ff",
+  "Integration": "#6b48ff",
+  "Analytics": "#00b288"
+}

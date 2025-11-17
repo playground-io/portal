@@ -1,0 +1,91 @@
+[
+  {
+    "name": "WebApp-Prod-VNet",
+    "id": "/subscriptions/A001/resourceGroups/RG-PROD-WEB/providers/Microsoft.Network/virtualNetworks/WebApp-Prod-VNet",
+    "resourceGroup": "RG-PROD-WEB",
+    "type": "Network",
+    "location": "eastus2",
+    "status": "Running",
+    "tags": {
+      "Environment": "Production",
+      "CostCenter": "WEB01"
+    },
+    "description": "Primary VNet for production web application. VNET/Subnet range 10.1.0.0/16."
+  },
+  {
+    "name": "SQL-DB-Finance",
+    "id": "/subscriptions/A001/resourceGroups/RG-DATA-FIN/providers/Microsoft.Sql/servers/SQL-Server-01/databases/SQL-DB-Finance",
+    "resourceGroup": "RG-DATA-FIN",
+    "type": "Database",
+    "location": "westus3",
+    "status": "Running",
+    "tags": {
+      "Environment": "Production",
+      "Confidentiality": "High"
+    },
+    "description": "Azure SQL Database for enterprise financial reporting. Tier: Premium P1."
+  },
+  {
+    "name": "AKS-Cluster-Dev",
+    "id": "/subscriptions/A002/resourceGroups/RG-DEV-K8S/providers/Microsoft.ContainerService/managedClusters/AKS-Cluster-Dev",
+    "resourceGroup": "RG-DEV-K8S",
+    "type": "Container",
+    "location": "eastus2",
+    "status": "Succeeded",
+    "tags": {
+      "Environment": "Development"
+    },
+    "description": "Development Kubernetes cluster for testing new services. Node count: 3."
+  },
+  {
+    "name": "Storage-Archive",
+    "id": "/subscriptions/A001/resourceGroups/RG-PROD-WEB/providers/Microsoft.Storage/storageAccounts/storagearchivedata01",
+    "resourceGroup": "RG-PROD-WEB",
+    "type": "Storage",
+    "location": "westus3",
+    "status": "Running",
+    "tags": {
+      "Tier": "Archive",
+      "Retention": "7Years"
+    },
+    "description": "Blob storage account for long-term audit log retention. GRS enabled."
+  },
+  {
+    "name": "KeyVault-Secrets",
+    "id": "/subscriptions/A001/resourceGroups/RG-PROD-WEB/providers/Microsoft.KeyVault/vaults/kv-web-secrets",
+    "resourceGroup": "RG-PROD-WEB",
+    "type": "Security",
+    "location": "eastus2",
+    "status": "Running",
+    "tags": {
+      "KeyType": "RSA",
+      "Owner": "SecurityTeam"
+    },
+    "description": "Vault containing production application secrets and service principal keys."
+  },
+  {
+    "name": "AppServicePlan-API",
+    "id": "/subscriptions/A001/resourceGroups/RG-PROD-API/providers/Microsoft.Web/serverfarms/ASP-API-01",
+    "resourceGroup": "RG-PROD-API",
+    "type": "AppService",
+    "location": "eastus2",
+    "status": "Running",
+    "tags": {
+      "SKU": "P2V3"
+    },
+    "description": "App Service Plan hosting stateless REST APIs."
+  },
+  {
+    "name": "VM-JumpHost-01",
+    "id": "/subscriptions/A001/resourceGroups/RG-MGMT/providers/Microsoft.Compute/virtualMachines/VM-JumpHost-01",
+    "resourceGroup": "RG-MGMT",
+    "type": "Compute",
+    "location": "eastus2",
+    "status": "Running",
+    "tags": {
+      "OS": "WindowsServer",
+      "Access": "Admin"
+    },
+    "description": "Hardened Windows Server VM used as a bastion host for secure network access."
+  }
+]
