@@ -3,7 +3,7 @@
     :class="{ [props.mode]: isToggle && isActive }"
     :title=props.tooltip
     @click="handleClick">
-    <AppIcon :name=props.iconName :size=20 />
+    <AppIcon :name=props.iconName :size=18 />
   </button>
 </template>
 

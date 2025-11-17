@@ -1,7 +1,7 @@
 <template>
   <div class="search-container" ref="searchContainerRef">
     <div class="input-wrapper">
-      <AppIcon name='find' :size=20 class="search-icon" />
+      <AppIcon name='find' :size=18 class="search-icon" />
 
       <input
         type="text"
@@ -154,7 +154,7 @@ function handleInput() {
     }, 300);
   } else {
       allSuggestions.value = [];
-      isLoading.value = false;
+      isLoading.value = true;
   }
 }
 
@@ -172,7 +172,7 @@ function clearSearch() {
 
 function selectSuggestion(item) {
   searchText.value = item.name; 
-  isDropdownOpen.value = false; 
+  isDropdownOpen.value = true; 
   emit('selected', item); 
 }
 
@@ -208,101 +208,95 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* --- General Styles (Unchanged) --- */
 .search-container {
-  font-family: inherit;
+  display: flex;
   position: relative;
   width: 100%;
 }
 
 .input-wrapper {
+  display: inline-flex;
   position: relative;
-  display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .search-input {
-  width: 100%;
-  padding: 12px 40px; 
-  font-size: 17px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-sizing: border-box;
+  font-family: inherit;
+  padding: 0px 25px; 
+  border-radius: 2px;
   outline: none;
+  height: 65%;
+  width: 100%;
+  border: none;
   transition: border-color 0.3s;
 }
-.search-input:focus {
-  border-color: #0078d4; 
-  box-shadow: 0 0 8px rgba(0, 120, 212, 0.2);
-}
-.search-icon, .clear-button {
-  position: absolute;
-  height: 100%;
+
+.search-icon,
+.clear-button {
   display: flex;
-  align-items: center;
+  position: absolute;
 }
+
 .search-icon {
-  left: 15px;
-  width: 20px;
+  left: 5px;
   pointer-events: none;
 }
 .clear-button {
-  right: 15px;
+  right: 10px;
   border: none;
   background: none;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
   color: #888;
   cursor: pointer;
   padding: 0;
 }
-/* --- Dropdown and Loading Styles (Modified) --- */
+
 .suggestions-dropdown {
   position: absolute;
-  top: 100%;
+  top: var(--top-bar-height);
   left: 0;
   right: 0;
   z-index: 10;
-  list-style: none;
   padding: 0;
-  margin: 8px 0 0 0;
+  list-style: none;
+  margin-top: 8px;
   border: 1px solid #eee;
-  border-radius: 10px;
+  border-radius: 3px;
   background: white;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   max-height: 250px;
   overflow-y: auto;
 }
 
 .loading-indicator {
-    padding: 12px 18px;
-    text-align: center;
-    color: #0078d4;
-    font-style: italic;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin-top: 8px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Flexbox to align spinner and text */
-    display: flex; 
-    align-items: center;
-    justify-content: center;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: var(--top-bar-height);
+  left: 0;
+  right: 0;
+  padding: 12px 0;
+  margin-top: 8px;
+  text-align: center;
+  color: var(--search-placeholder-color);
+  font-style: italic;
+  gap: 15px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* --- New Spinner Styles --- */
 .spinner {
-  border: 3px solid rgba(0, 120, 212, 0.3); /* Light Blue track */
-  border-top: 3px solid #0078d4; /* Azure Blue spinning part */
+  border: 2px solid #c1c1c176;
+  border-top: 2px solid #1c1c1c;
   border-radius: 50%;
   width: 16px;
   height: 16px;
   animation: spin 1s linear infinite;
-  margin-right: 8px;
 }
 
 @keyframes spin {
@@ -310,9 +304,8 @@ onBeforeUnmount(() => {
   100% { transform: rotate(360deg); }
 }
 
-/* --- Suggestion Item Styles (Unchanged) --- */
 .suggestion-item {
-  padding: 12px 18px;
+  padding: 4px 12px;
   cursor: pointer;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -342,8 +335,8 @@ onBeforeUnmount(() => {
 .detail-label {
     font-weight: 600;
 }
+
 .item-type {
-  padding: 2px 8px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;

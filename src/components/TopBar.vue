@@ -37,23 +37,28 @@
 
 <style scoped>
 .top-bar {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
-  width: 100%;
   height: var(--top-bar-height);
   color: var(--top-bar-txt);
   background-color: var(--top-bar-bg);
+}
+
+.top-bar-left,
+.top-bar-center,
+.top-bar-right {
+  display: inline-flex;
+  width: 100%;
 }
 
 .top-bar-left {
   justify-content: left;
 }
 
-.top-bar-center { 
+.top-bar-center {
   justify-content: center;
-  max-width: 600px;
+  max-width: 500px;
   min-width: 250px;
-  width: 100%;
 }
 
 .top-bar-right {
