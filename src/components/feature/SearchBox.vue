@@ -61,7 +61,7 @@
 
 <script setup>
 import { ref, computed, defineEmits, onMounted, onBeforeUnmount } from 'vue';
-import AppIcon from './AppIcons.vue';
+import AppIcon from '@/components/core/AppIcons.vue';
 
 const emit = defineEmits(['selected']);
 

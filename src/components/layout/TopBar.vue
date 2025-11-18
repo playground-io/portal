@@ -5,10 +5,10 @@
         @click="handleNavigation('profile')" />
       <TopBarButton label="services-admin" tooltip="Services Admin" mode="normal" iconName="menu"
         @click="handleNavigation('profile')" />
-      <TopBarBranding />
+      <!-- <TopBarBranding /> -->
     </div>
     <div class="top-bar-center">
-      <SearchBox />
+      <!-- <SearchBox /> -->
     </div>
     <div class="top-bar-right">
       <TopBarButton label="portal-shell" tooltip="Portal Shell" mode="toggle" iconName="console"
@@ -23,16 +23,16 @@
         @click="handleNavigation('profile')" />
       <TopBarButton label="fedback" tooltip="Feedback" mode="tab" iconName="feedback"
         @click="handleNavigation('profile')" />
-      <AvatarContainer />
+      <!-- <AvatarContainer /> -->
     </div>
   </nav>
 </template>
 
 <script setup>
-  import TopBarButton from './TopBarButton.vue';
-  import SearchBox from './SearchBox.vue';
-  import AvatarContainer from './AvatarContainer.vue';
-  import TopBarBranding from './TopBarBranding.vue';
+  import TopBarButton from '@/components/core/TopBarButton.vue';
+  import SearchBox from '@/components/feature/SearchBox.vue';
+  import AvatarContainer from '@/components/feature/AvatarContainer.vue';
+  import TopBarBranding from '@/components/core/TopBarBranding.vue';
 </script>
 
 <style scoped>
