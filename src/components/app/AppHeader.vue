@@ -9,7 +9,7 @@
 </script>
 
 <style scoped>
-.header-container {
-  display: block;
-}
+  .header-container {
+    display: block;
+  }
 </style>

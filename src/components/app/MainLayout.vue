@@ -9,8 +9,8 @@
 </script>
 
 <style scoped>
-.main-container {
-  display: block;
-  overflow-y: auto;
-}
+  .main-container {
+    display: block;
+    overflow-y: auto;
+  }
 </style>

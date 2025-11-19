@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import AppIcon from './AppIcons.vue';
+  import { ref, computed } from 'vue';
+  import AppIcon from './ShowIcon.vue';
 
 const props = defineProps({
   label: {

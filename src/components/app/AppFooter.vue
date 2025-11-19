@@ -9,7 +9,7 @@
 </script>
 
 <style scoped>
-.footer-container {
-  display: block;
-}
+  .footer-container {
+    display: block;
+  }
 </style>
