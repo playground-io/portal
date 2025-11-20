@@ -1,7 +1,7 @@
 <template>
   <div class="topbar-branding" title="Admin Portal">
-    <div class="branding-label">AXIANS</div>
-    <div class="service-label">Admin Portal</div>
+    <div class="branding-label">{{ $t('nav.brandingLabel') }}</div>
+    <div class="service-label">{{ $t('nav.serviceLabel') }}</div>
   </div>
 </template>
 

@@ -5,7 +5,7 @@
         @click="handleNavigation('profile')" />
       <TopBarButton label="services-admin" tooltip="Services Admin" mode="normal" iconName="menu"
         @click="handleNavigation('profile')" />
-      <!-- <TopBarBranding /> -->
+      <TopBarBranding />
     </div>
     <div class="top-bar-center">
       <!-- <SearchBox /> -->
@@ -36,32 +36,32 @@
 </script>
 
 <style scoped>
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  height: var(--top-bar-height);
-  color: var(--top-bar-txt);
-  background-color: var(--top-bar-bg);
-}
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    height: var(--top-bar-height);
+    color: var(--top-bar-txt);
+    background-color: var(--top-bar-bg);
+  }
 
-.top-bar-left,
-.top-bar-center,
-.top-bar-right {
-  display: inline-flex;
-  width: 100%;
-}
-
-.top-bar-left {
-  justify-content: left;
-}
-
-.top-bar-center {
-  justify-content: center;
-  max-width: 500px;
-  min-width: 250px;
-}
-
-.top-bar-right {
-  justify-content: right;
-}
+  .top-bar-left,
+  .top-bar-center,
+  .top-bar-right {
+    display: inline-flex;
+    width: 100%;
+  }
+  
+  .top-bar-left {
+    justify-content: left;
+  }
+  
+  .top-bar-center {
+    justify-content: center;
+    max-width: 500px;
+    min-width: 250px;
+  }
+  
+  .top-bar-right {
+    justify-content: right;
+  }
 </style>

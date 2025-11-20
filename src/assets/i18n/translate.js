@@ -5,6 +5,9 @@ export const messages = {
       description: 'This is the main content area, rendered below the TopBar component.',
     },
     nav: {
+      brandingLabel: 'AXIANS',
+      serviceLabel: 'Admin Portal',
+
       home: 'Home',
       features: 'Features',
       pricing: 'Pricing',
@@ -18,6 +21,9 @@ export const messages = {
       description: 'Esta es el área de contenido principal, renderizada debajo de la barra superior.',
     },
     nav: {
+      brandingLabel: 'AXIANS',
+      serviceLabel: 'Admin Portal',
+
       home: 'Inicio',
       features: 'Características',
       pricing: 'Precios',
@@ -31,6 +37,9 @@ export const messages = {
       description: 'Ceci est la zone de contenu principale, rendue sous la barre supérieure.',
     },
     nav: {
+      brandingLabel: 'AXIANS',
+      serviceLabel: 'Admin Portal',
+
       home: 'Accueil',
       features: 'Fonctionnalités',
       pricing: 'Tarifs',

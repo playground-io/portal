@@ -23,18 +23,18 @@
     }
   });
 
-  // Composition API Logic
   const iconPath = computed(() => {
     return ICON_REGISTRY[props.name] || '<!-- Icon not found -->';
   });
 </script>
 
 <style scoped>
-  .app-icon {
+  .show-icon {
     stroke-linecap: round;
     stroke-linejoin: round;
     clip-rule: evenodd;
-    stroke-width: 1.5;
     fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
   }
 </style>
