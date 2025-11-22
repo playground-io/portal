@@ -1,7 +1,7 @@
 <template>
-  <div class="topbar-branding" title="Admin Portal">
-    <div class="branding-label">{{ $t('nav.brandingLabel') }}</div>
-    <div class="service-label">{{ $t('nav.serviceLabel') }}</div>
+  <div class="topbar-branding" :title="$t('nav.branding.title')">
+    <div class="branding-label">{{ $t('nav.branding.label') }}</div>
+    <div class="service-label">{{ $t('nav.branding.service') }}</div>
   </div>
 </template>
 
@@ -11,27 +11,30 @@
 .topbar-branding {
   display: flex;
   flex-direction: column;
+  container-type: inline-size;
   justify-content: center;
-  height: 100%;
-  line-height: 1.1;
-  min-width: 0;
-  padding:0 22px;
-  color: var(--top-bar-btn-txt);
+  min-width: 10px;
+  
   user-select: none;
-  /*transition: background-color var(--transition-fast) ease;*/
+  line-height: 1.2;
+  color: var(--top-bar-btn-txt);
+  transition: background-color var(--transition-medium) ease;
 }
 
-.topbar-branding .branding-label {
-  font-size:1.3rem;
-  font-weight:550;
+.branding-label {
+  font-size: 1.3rem;
+  white-space: nowrap;
   letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
-.topbar-branding .service-label {
-  min-width:0;
-  font-size:1.1rem;
-  white-space:nowrap;
+.service-label {
+  font-size: 1.1rem;
+  white-space: nowrap;
   letter-spacing: 1px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 0;
 }
 
 .topbar-branding:hover {
@@ -41,8 +44,14 @@
 }
 
 .topbar-branding:active {
-  transition: background-color 0s ease;
   background-color: var(--top-bar-btn-bg-active);
   color: var(--top-bar-btn-txt-active);
+  transition: background-color 0s ease;
+}
+
+@container (max-width: 100px) {
+  .service-label {
+    display: none;
+  }
 }
 </style>

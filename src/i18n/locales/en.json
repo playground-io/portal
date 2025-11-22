@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "button": {
+      "app": "Cloud Apps",
+      "menu": "Services Admin",
+      "console": "Portal Shell",
+      "tasks": "Running Tasks",
+      "notifications": "Notifications",
+      "settings": "Settings",
+      "support": "Support",
+      "feedback": "Feedback",
+      "more": "Portal Tools"
+    },
+    "branding": {     
+      "title": "Home",
+      "label": "SONAE MC",
+      "service": "Admin Portal"
+    }
+  }
+}

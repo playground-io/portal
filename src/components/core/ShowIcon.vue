@@ -30,6 +30,8 @@
 
 <style scoped>
   .show-icon {
+    display: block;
+    margin: auto;
     stroke-linecap: round;
     stroke-linejoin: round;
     clip-rule: evenodd;

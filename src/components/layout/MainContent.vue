@@ -1,6 +1,7 @@
 <template>
   <div class="main-content">
     <div class="thediv">
+      <AppLang />
       <p>Main Container</p>
       <p>Main Container</p>
       <p>Main Container</p>
@@ -25,21 +26,22 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  import AppLang from '../feature/AppLang.vue';
+</script>
 
 <style scoped>
   .main-content {  
     display: flex;
     min-height: 0; 
     min-width: 0;
-    overflow-y: auto;
   }
 
   .thediv {
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  min-height: 0; 
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    min-height: 0; 
     min-width: 0;
   }
 </style>
