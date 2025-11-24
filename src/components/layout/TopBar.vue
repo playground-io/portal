@@ -41,8 +41,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "@/assets/scss/styles.scss";
-
   .top-bar {
     display: flex;
     justify-content: space-between;

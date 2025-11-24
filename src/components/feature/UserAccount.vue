@@ -16,8 +16,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "@/assets/scss/styles.scss";
-
 .avatar-content button {
   display: inline-flex;
   font-family: inherit; 

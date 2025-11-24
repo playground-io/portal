@@ -8,8 +8,6 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-  @import "@/assets/scss/styles.scss";
-
 .topbar-branding {
   display: inline-flex;
   flex-direction: column;
@@ -27,6 +25,8 @@
   white-space: nowrap;
   letter-spacing: 0.5px;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .service-label {
@@ -48,6 +48,10 @@
 @media (max-width: $viewport-sm) {
   .service-label {
     display: none;
+  }
+
+  .branding-label {
+    max-width: 90px;
   }
 }
 </style>
