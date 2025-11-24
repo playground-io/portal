@@ -40,7 +40,9 @@
   import TopBarBranding from '@/components/core/TopBarBranding.vue';
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "@/assets/scss/styles.scss";
+
   .top-bar {
     display: flex;
     justify-content: space-between;
@@ -58,34 +60,51 @@
   
   .top-bar-left {
     justify-content: left;
-    max-width: 600px;
-    min-width: 0px;
+    min-width: 260px;
+    max-width: 350px;
   }
   
   .top-bar-center {
     justify-content: center;
-    max-width: 600px;
-    min-width: 0px;
   }
   
   .top-bar-right {
     justify-content: right;
-    max-width: 500px;
+    min-width: 470px;
+    max-width: 550px;
   }
 
   .top-bar-right-shrunk {
     display: none;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: $viewport-md) {
+    .top-bar-right {
+      min-width: 290px;
+      max-width: 300px;
+    }
+
+   .top-bar-left {
+      min-width: 260px;
+      max-width: 270px;
+    }
+  }
+
+  @media (max-width: $viewport-sm) {
     .top-bar-right {
       display: none;
     }
 
+    .top-bar-left {
+      min-width: 180px;
+      max-width: 190px;
+    }
+
     .top-bar-right-shrunk {
-      display: inline-flex;
+      display: flex;
       justify-content: right;
-      min-width: 100px;
+      min-width: 90px;
+      max-width: 100px;
     }
   }
 </style>

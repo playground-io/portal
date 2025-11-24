@@ -2,7 +2,7 @@
   <div class="avatar-content">
     <button type="button" title="User Account" aria-label="User Account Button">
       <div class="user-account-wrapper">
-        <div class="account"> jose.pereira@axians.com</div>
+        <div class="account">jose.pereira@axians.com</div>
         <div class="company">AxiansEU Digital Solutions, S.A</div>
       </div>
       <div class="user-picture-wrapper" >
@@ -15,7 +15,9 @@
 <script setup>
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "@/assets/scss/styles.scss";
+
 .avatar-content button {
   display: inline-flex;
   font-family: inherit; 
@@ -53,7 +55,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 160px;
+  max-width: 160px;
 }
 
 .user-account-wrapper .company {
@@ -63,7 +65,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 160px;
+  max-width: 160px;
 }
 
 .user-picture-wrapper {
@@ -77,10 +79,9 @@
   display: block;
 }
 
-@media (max-width: 992px) {
+@media (max-width: $viewport-md) {
   .user-account-wrapper {
     display: none;
   }
 }
-
 </style>

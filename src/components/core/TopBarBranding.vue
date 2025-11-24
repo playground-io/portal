@@ -7,18 +7,19 @@
 
 <script setup></script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "@/assets/scss/styles.scss";
+
 .topbar-branding {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  container-type: inline-size;
+  align-items: flex-start;
   justify-content: center;
-  min-width: 10px;
-  
+  padding: 0 16px;
   user-select: none;
   line-height: 1.2;
   color: var(--top-bar-btn-txt);
-  transition: background-color var(--transition-medium) ease;
+  background: transparent;
 }
 
 .branding-label {
@@ -32,24 +33,19 @@
   font-size: 1.1rem;
   white-space: nowrap;
   letter-spacing: 1px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  min-width: 0;
 }
 
-.topbar-branding:hover {
+.branding-label:hover,
+.service-label:hover {
   cursor: pointer;
-  background-color: var(--top-bar-btn-bg-hover);
-  color: var(--top-bar-btn-txt-hover);
 }
 
-.topbar-branding:active {
-  background-color: var(--top-bar-btn-bg-active);
+.branding-label:active,
+.service-label:active {
   color: var(--top-bar-btn-txt-active);
-  transition: background-color 0s ease;
 }
 
-@container (max-width: 100px) {
+@media (max-width: $viewport-sm) {
   .service-label {
     display: none;
   }
