@@ -16,5 +16,10 @@
       "label": "SONAE MC",
       "service": "Admin Portal"
     }
+  },
+  "footer": {
+    "tasks": "{count} Running Tasks",
+    "rights": "All rights reserved.",
+    "copyright": "© Axians 2025"
   }
 }

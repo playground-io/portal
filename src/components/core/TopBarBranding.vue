@@ -27,6 +27,7 @@
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
 }
 
 .service-label {

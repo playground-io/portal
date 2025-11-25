@@ -212,6 +212,7 @@ onBeforeUnmount(() => {
   display: flex;
   position: relative;
   width: 100%;
+  max-width: 550px;
 }
 
 .input-wrapper {
@@ -241,6 +242,7 @@ onBeforeUnmount(() => {
 .search-icon {
   left: 5px;
   pointer-events: none;
+  color: #000;
 }
 .clear-button {
   right: 10px;
