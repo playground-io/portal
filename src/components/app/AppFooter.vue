@@ -1,11 +1,13 @@
 <template>
   <footer class="footer-container">
-    <BottomBar />
+    <FooterSplitter />
+    <StatusBar />
   </footer>
 </template>
 
 <script setup>
-  import BottomBar from '@/components/layout/BottomBar.vue';
+  import FooterSplitter from '@/components/layout/FooterSplitter.vue';
+  import StatusBar from '@/components/layout/StatusBar.vue';
 </script>
 
 <style scoped>

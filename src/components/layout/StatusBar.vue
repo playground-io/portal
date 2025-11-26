@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-bar">
     <div class="bottom-bar-left">
-      <ShowIcon name="pulse_anime1" size="24" class="icon" />
+      <ShowIcon name="waiting_anime1" size="16" class="icon" />
       {{ $t('footer.tasks') }}
     </div>
     <div class="bottom-bar-center">
@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    border-top: 1px solid var(--bottom-bar-bg);
+    /*border-top: 1px solid var(--bottom-bar-bg);
     /*background-color: var(--bottom-bar-bg);*/
     color: var(--bottom-bar-txt);
     height: var(--bottom-bar-height);
@@ -30,7 +30,7 @@
   }
 
   .bottom-bar:hover {
-    background-color: lightblue;
+    background-color: var(--bottom-bar-bg);
   }
 
   .bottom-bar-left,

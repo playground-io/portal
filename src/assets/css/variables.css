@@ -1,7 +1,7 @@
 :root {
   /* dimensions */
   --top-bar-height: 40px;
-  --bottom-bar-height: 40px;
+  --bottom-bar-height: 30px;
 
   /* annimations */
   --transition-fast: 0.2s;

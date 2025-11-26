@@ -1,15 +1,17 @@
 <template>
   <button
     :class="{ [props.mode]: isToggle && isActive }"
-    :title=props.tooltip
     @click="handleClick">
-    <ShowIcon :name=props.iconName :size=20 />
+    <div class=button-item-tooltip>
+      {{ props.tooltip }}
+    </div>
+    <ShowIcon :name=props.iconName :size=19 />
   </button>
 </template>
 
 <script setup>
   import { ref, computed } from 'vue';
-  import ShowIcon from './ShowIcon.vue';
+  import ShowIcon from '@/components/core/ShowIcon.vue';
 
   const props = defineProps({
     label: {
@@ -43,6 +45,7 @@
 
 <style scoped>
   button {
+    position: relative;
     height: 100%;
     aspect-ratio: 1 / 1;
     padding: 0;
@@ -52,11 +55,35 @@
     transition: background-color var(--transition-medium) ease;
   }
 
+  /* --- Tooltip Styling --- */
+  .button-item-tooltip {
+    position: absolute;
+    visibility:hidden;
+    opacity: 0;
+    transition: opacity var(--transition-medium) ease;
+    padding: 5px 10px;
+    border: 1px solid var(--top-bar-btn-border-tooltip);
+    border-radius: 4px;
+    white-space: nowrap;
+    color: var(--top-bar-btn-txt-tooltip);
+    background-color: var(--top-bar-btn-bg-tooltip);
+    font-size: 1.2rem;
+    left: 0;
+    top: 85%;
+    font-weight: 100;
+    transform: translateX(25%);
+  }
+
   button:hover {
     background-color: var(--top-bar-btn-bg-hover);
     color: var(--top-bar-btn-txt-hover);
   }
 
+  button:hover .button-item-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
   button:active {
     background-color: var(--top-bar-btn-bg-active);
     color: var(--top-bar-btn-txt-active);

@@ -36,10 +36,16 @@
   --top-bar-btn-bg-tab-active: rgba(255, 255, 255, 0.9);
   --top-bar-btn-txt-tab-active: rgba(0, 0, 0, 0.8);
 
+  --top-bar-btn-border-tooltip: rgba(255, 255, 255, 0.6);
+  --top-bar-btn-txt-tooltip: rgba(255, 255, 255, 0.8);
+  --top-bar-btn-bg-tooltip: rgb(60, 60, 60);
+
   --search-bg-color:#c7c7c7;
   --search-placeholder-color: grey;
   --search-text-color: #2c2c2c;
 
-  --bottom-bar-bg: #dddddd;
+  --splitter-bar-bg: rgb(224, 224, 224);
+
+  --bottom-bar-bg: #b1b1b1;
   --bottom-bar-txt: #1c1c1c;
 }

@@ -15,7 +15,7 @@
 <style scoped>
   .global-container {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr 1px auto;
     grid-template-columns: 1fr;
     height: 100%;
   }
