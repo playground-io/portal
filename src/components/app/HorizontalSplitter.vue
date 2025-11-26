@@ -1,0 +1,130 @@
+<template>
+  <div class="splitter"
+    :class="{ 'locked': isLocked }"
+    role="separator"
+    @mousedown="startDrag"
+  >
+    <div class="splitter-handle"></div>
+  </div>
+</template>
+
+<script setup>
+  import { ref, onUnmounted } from 'vue';
+
+  // Define Props
+  const props = defineProps({
+    modelValue: {
+      type: Number,
+      required: true
+    },
+    isLocked: {
+      type: Boolean,
+      default: false
+    }
+  });
+  
+  // Define Emits
+  const emit = defineEmits(['update:modelValue', 'dragStart', 'dragEnd']);
+
+  // Internal State
+  const isDragging = ref(false);
+  const startY = ref(0);
+  const startHeight = ref(0);
+
+  const startDrag = (e) => {
+    if (props.isLocked) return;
+
+    isDragging.value = true;
+    startY.value = e.clientY;
+    startHeight.value = props.modelValue;
+
+    // Add styling to body to prevent text selection
+    document.body.classList.add('resizing');
+
+    // Attach global listeners
+    document.addEventListener('mousemove', onDrag);
+    document.addEventListener('mouseup', stopDrag);
+
+    emit('dragStart');
+  };
+
+  const onDrag = (e) => {
+    if (!isDragging.value) return;
+
+    // Calculate delta (Movement UP means positive delta for bottom height)
+    const deltaY = startY.value - e.clientY;
+    const newHeight = startHeight.value + deltaY;
+
+    // Constraints (Min 100px, Max 80% of window height)
+    const minHeight = 100;
+    const maxHeight = window.innerHeight * 0.8;
+    console.log( newHeight );
+    if (newHeight >= minHeight && newHeight <= maxHeight) {
+      emit('update:modelValue', newHeight);
+  
+    }
+  };
+
+  const stopDrag = () => {
+    if (isDragging.value) {
+      isDragging.value = false;
+      document.body.classList.remove('resizing');
+      emit('dragEnd');
+    }
+
+    // Clean up listeners
+    document.removeEventListener('mousemove', onDrag);
+    document.removeEventListener('mouseup', stopDrag);
+  };
+
+  onUnmounted(() => {
+    document.removeEventListener('mousemove', onDrag);
+    document.removeEventListener('mouseup', stopDrag);
+  });
+</script>
+
+<style scoped>
+.splitter {
+    cursor: row-resize;
+  user-select: none;
+  height: var(--splitter-height, 8px);
+  background-color: var(--color-border, #e5e7eb);
+  cursor: row-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.15s;
+  z-index: 20;
+}
+
+.splitter:hover, .splitter:active {
+  background-color: var(--color-primary-hover, #d36434);
+}
+
+.splitter.locked {
+  cursor: default;
+  background-color: #f3f4f6;
+  border-top: 1px solid var(--color-border, #e5e7eb);
+}
+
+.splitter.locked:hover {
+  background-color: #f3f4f6; 
+}
+
+.splitter-handle {
+  width: 148px;
+  height: 4px;
+  background-color: #d1d5db;
+  border-radius: 9999px;
+  transition: background-color 0.15s;
+}
+
+.splitter:hover .splitter-handle {
+  background-color: white;
+}
+
+.splitter.locked .splitter-handle {
+  display: none;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-bar">
     <div class="bottom-bar-left">
-      <ShowIcon name="waiting_anime1" size="16" class="icon" />
+      <ShowIcon name="waiting_anime1" :size=16 class="icon" />
       {{ $t('footer.tasks') }}
     </div>
     <div class="bottom-bar-center">

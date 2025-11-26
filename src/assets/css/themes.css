@@ -48,4 +48,16 @@
 
   --bottom-bar-bg: #b1b1b1;
   --bottom-bar-txt: #1c1c1c;
+
+  /*Splitter */
+--color-primary: #10b981;
+  --color-primary-hover: #34d399;
+  --color-bg-app: #f3f4f6;
+  --color-bg-main: #f8fafc;
+  --color-bg-white: #ffffff;
+  --color-border: #e5e7eb;
+  --color-text-main: #1f2937;
+  --color-text-muted: #6b7280;
+  --splitter-height: 8px;
+  --header-height: 64px;
 }

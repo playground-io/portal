@@ -1,12 +1,12 @@
 <template>
   <footer class="footer-container">
-    <FooterSplitter />
+    <RunningTasks />
     <StatusBar />
   </footer>
 </template>
 
 <script setup>
-  import FooterSplitter from '@/components/layout/FooterSplitter.vue';
+  import RunningTasks from '@/components/layout/RunningTasks.vue';
   import StatusBar from '@/components/layout/StatusBar.vue';
 </script>
 
