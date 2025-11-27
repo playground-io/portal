@@ -1,7 +1,6 @@
 <template>
   <div class="splitter"
     :class="{ 'locked': isLocked }"
-    role="separator"
     @mousedown="startDrag"
   >
     <div class="splitter-handle"></div>
@@ -60,8 +59,7 @@
     const maxHeight = window.innerHeight * 0.8;
     console.log( newHeight );
     if (newHeight >= minHeight && newHeight <= maxHeight) {
-      emit('update:modelValue', newHeight);
-  
+      emit('update:modelValue', newHeight);  
     }
   };
 
@@ -85,17 +83,16 @@
 
 <style scoped>
 .splitter {
-    cursor: row-resize;
   user-select: none;
+
   height: var(--splitter-height, 8px);
-  background-color: var(--color-border, #e5e7eb);
+  background-color: var(--color-border, #5e90f4);
   cursor: row-resize;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   transition: background-color 0.15s;
-  z-index: 20;
 }
 
 .splitter:hover, .splitter:active {
@@ -104,7 +101,7 @@
 
 .splitter.locked {
   cursor: default;
-  background-color: #f3f4f6;
+  background-color: #345391;
   border-top: 1px solid var(--color-border, #e5e7eb);
 }
 
@@ -113,7 +110,7 @@
 }
 
 .splitter-handle {
-  width: 148px;
+  width: 48px;
   height: 4px;
   background-color: #d1d5db;
   border-radius: 9999px;

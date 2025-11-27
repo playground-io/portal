@@ -94,9 +94,9 @@ const onSplitterDragEnd = () => {
 
 <style scoped>
   .tasks-container {
-    min-height: 80px;
-    max-height: 100px;
-    overflow-y: scroll;
+    min-height: 50px;
+    max-height: 300px;
+    overflow-y: auto;
     height: 100%;
   }
   
