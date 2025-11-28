@@ -2,7 +2,7 @@
   <div class="main-content">
     <div class="thediv">
       <AppLang />
-      <p>Main Container</p>
+      <p>The Space {{ store.bottomHeight  }}ddd</p>
       <p>Main Container</p>
       <p>Main Container</p>
       <p>Main Container</p>
@@ -28,6 +28,11 @@
 
 <script setup>
   import AppLang from '../feature/AppLang.vue';
+  import { useTasksStore } from '@/stores/taksStore.js';
+
+  const store = useTasksStore();
+  console.log( store.bottomHeight );
+
 </script>
 
 <style scoped>

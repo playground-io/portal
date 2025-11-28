@@ -9,6 +9,9 @@
 
 <script setup>
   import { ref, onUnmounted } from 'vue';
+  import { useTasksStore } from '@/stores/taksStore.js';
+
+  const store = useTasksStore();
 
   // Define Props
   const props = defineProps({
@@ -57,9 +60,11 @@
     // Constraints (Min 100px, Max 80% of window height)
     const minHeight = 100;
     const maxHeight = window.innerHeight * 0.8;
-    console.log( newHeight );
+    
     if (newHeight >= minHeight && newHeight <= maxHeight) {
-      emit('update:modelValue', newHeight);  
+      emit('update:modelValue', newHeight);
+      store.bottomHeight = newHeight;
+      
     }
   };
 
