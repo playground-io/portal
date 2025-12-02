@@ -1,3 +1,19 @@
+<script setup>
+  import TopBarButton from '@/components/core/TopBarButton.vue';
+  import SearchBox from '@/components/feature/SearchBox.vue';
+  import UserAccount from '@/components/feature/UserAccount.vue';
+  import TopBarBranding from '@/components/core/TopBarBranding.vue';
+  import { useTasksStore } from '@/stores/taksStore.js';
+
+  const store = useTasksStore();
+
+  const handleNavigation = () => {
+    // Call the store action directly
+    store.isLocked();
+  };
+
+</script>
+
 <template>
   <nav class="top-bar">
     <div class="top-bar-left">
@@ -14,7 +30,7 @@
       <TopBarButton label="portal-shell" :tooltip="$t('nav.button.console')" mode="toggle" iconName="console"
         @click="handleNavigation('profile')" />
       <TopBarButton label="running-tasks" :tooltip="$t('nav.button.tasks')" mode="toggle" iconName="tasks"
-        @click="handleNavigation('profile')" />
+        @click="handleNavigation()" />
       <TopBarButton label="notifications" :tooltip="$t('nav.button.notifications')" mode="tab" iconName="notifications"
         @click="handleNavigation('profile')" />
       <TopBarButton label="settings" :tooltip="$t('nav.button.settings')" mode="tab" iconName="settings"
@@ -32,13 +48,6 @@
     </div>
   </nav>
 </template>
-
-<script setup>
-  import TopBarButton from '@/components/core/TopBarButton.vue';
-  import SearchBox from '@/components/feature/SearchBox.vue';
-  import UserAccount from '@/components/feature/UserAccount.vue';
-  import TopBarBranding from '@/components/core/TopBarBranding.vue';
-</script>
 
 <style lang="scss" scoped>
   .top-bar {

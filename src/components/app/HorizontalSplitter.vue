@@ -1,18 +1,18 @@
-<template>
-  <div class="splitter"
-    :class="{ 'locked': isLocked }"
-    @mousedown="startDrag"
-  >
-    <div class="splitter-handle"></div>
-  </div>
-</template>
-
 <script setup>
   import { ref, onUnmounted } from 'vue';
   import { useTasksStore } from '@/stores/taksStore.js';
 
   const store = useTasksStore();
 
+  // --- Snap Configuration ---
+  const SNAP_OFFSET = 50; // Pixels distance to snap
+  const SNAP_POINTS = [
+    300, 
+    window.innerHeight * 0.5, 
+    window.innerHeight * 0.9
+  ];
+  // -------------------------
+  
   // Define Props
   const props = defineProps({
     modelValue: {
@@ -50,7 +50,7 @@
     emit('dragStart');
   };
 
-  const onDrag = (e) => {
+/*  const onDrag = (e) => {
     if (!isDragging.value) return;
 
     // Calculate delta (Movement UP means positive delta for bottom height)
@@ -65,6 +65,34 @@
       emit('update:modelValue', newHeight);
       store.bottomHeight = newHeight;
       
+    }
+  };*/
+
+  const onDrag = (e) => {
+    if (!isDragging.value) return;
+
+    const deltaY = startY.value - e.clientY;
+    let newHeight = startHeight.value + deltaY; // Changed to 'let'
+
+    // 1. Apply Snap Logic
+    for (const snapPoint of SNAP_POINTS) {
+      if (Math.abs(newHeight - snapPoint) <= SNAP_OFFSET) {
+        newHeight = snapPoint; // Snap to the exact point
+        break; 
+      }
+    }
+
+    // 2. Apply Hard Constraints
+    const minHeight = 100;
+    const maxHeight = window.innerHeight * 0.8;
+    
+    // Ensure newHeight respects hard min/max constraints
+    const finalHeight = Math.max(minHeight, Math.min(maxHeight, newHeight));
+
+    // 3. Update Model
+    if (props.modelValue !== finalHeight) {
+      emit('update:modelValue', finalHeight);
+      store.bottomHeight = finalHeight;
     }
   };
 
@@ -86,15 +114,24 @@
   });
 </script>
 
-<style scoped>
+<template>
+  <div class="splitter"
+    :class="{ 'locked': isLocked }"
+    @mousedown="startDrag"
+  >
+    <div class="splitter-handle"></div>
+  </div>
+</template>
+
+<style lang=scss scoped>
 .splitter {
   user-select: none;
-
-  height: var(--splitter-height, 8px);
-  background-color: var(--color-border, #5e90f4);
+  border-top: 1px solid var(--color-border);
+  height: var(--splitter-height);
+  //background-color: var(--color-border, #5e90f4);
   cursor: row-resize;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   flex-shrink: 0;
   transition: background-color 0.15s;
@@ -116,9 +153,9 @@
 
 .splitter-handle {
   width: 48px;
-  height: 4px;
+  height: 2px;
   background-color: #d1d5db;
-  border-radius: 9999px;
+  border-radius: 4px;
   transition: background-color 0.15s;
 }
 

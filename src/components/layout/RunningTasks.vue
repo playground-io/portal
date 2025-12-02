@@ -50,9 +50,22 @@
 
 <script setup>
 
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import Splitter from '@/components/app/HorizontalSplitter.vue'
+  import { useTasksStore } from '@/stores/taksStore.js';
 
+  const store = useTasksStore();
+
+  // Watch the store state
+watch(
+  () => store.triggerNotification,
+  (newValue, oldValue) => {
+    // If the value changes (which means the 'notify' action was called)
+    if (newValue === !oldValue) {
+      toggleLock();
+    }
+  }
+);
 // State
 const bottomHeight = ref(250); 
 const lastHeight = ref(250);
@@ -94,8 +107,8 @@ const onSplitterDragEnd = () => {
 
 <style scoped>
   .tasks-container {
-    min-height: 50px;
-    max-height: 300px;
+    /*min-height: 50px;
+    max-height: 300px;*/
     overflow-y: auto;
     height: 100%;
   }

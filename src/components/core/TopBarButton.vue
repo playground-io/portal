@@ -1,14 +1,3 @@
-<template>
-  <button
-    :class="{ [props.mode]: isToggle && isActive }"
-    @click="handleClick">
-    <div class=button-item-tooltip>
-      {{ props.tooltip }}
-    </div>
-    <ShowIcon :name=props.iconName :size=19 />
-  </button>
-</template>
-
 <script setup>
   import { ref, computed } from 'vue';
   import ShowIcon from '@/components/core/ShowIcon.vue';
@@ -42,6 +31,17 @@
     }
   };
 </script>
+
+<template>
+  <button
+    :class="{ [props.mode]: isToggle && isActive }"
+    @click="handleClick">
+    <div class=button-item-tooltip>
+      {{ props.tooltip }}
+    </div>
+    <ShowIcon :name=props.iconName :size=19 />
+  </button>
+</template>
 
 <style scoped>
   button {

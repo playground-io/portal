@@ -8,6 +8,17 @@ import { ref } from 'vue'
 export const useTasksStore = defineStore('tasks', () => {
 
   const bottomHeight='Hello'
+  
+// State: This flag will be watched by the target component.
+  const triggerNotification = ref(false); 
 
-  return { bottomHeight }
+  // Action: This is the function called by the button component.
+  const isLocked = () => {
+    // We increment the count to ensure a state change is always detected, 
+    // even if the button is pressed multiple times quickly.
+    triggerNotification.value=!triggerNotification.value; 
+    console.log(triggerNotification.value);
+  };
+
+  return { bottomHeight, isLocked, triggerNotification}
 })
