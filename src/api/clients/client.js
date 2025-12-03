@@ -12,8 +12,16 @@ const apiClient = axios.create({
   },
 });
 
+// Define the simulated delay time in milliseconds
+const SIMULATED_DELAY_MS = 15000; // 2 seconds delay
+
 // 💡 Request Interceptor: Attaches the API Key to EVERY request
-apiClient.interceptors.request.use(config => {
+apiClient.interceptors.request.use(async config => {
+
+  // 🛑 SIMULATION: Add a deliberate, artificial delay
+  console.log(`Simulating a ${SIMULATED_DELAY_MS}ms network delay...`);
+  await new Promise(resolve => setTimeout(resolve, SIMULATED_DELAY_MS));
+
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
   
   // Tomorrow.io uses a query parameter, not an Authorization header
@@ -22,6 +30,8 @@ apiClient.interceptors.request.use(config => {
     config.params = config.params || {};
     // Attach the API key as a query parameter
     config.params.apikey = apiKey;
+    // Set the Authorization header with a 'Bearer' prefix (common for tokens)
+    //config.headers.Authorization = `Bearer ${apiKey}`;
   }
   return config;
 }, error => {
@@ -37,6 +47,10 @@ apiClient.interceptors.response.use(response => response, error => {
     if (error.response.status === 403) {
       alert("API Key is invalid or expired. Cannot proceed.");
     }
+    // Updated error check for standard authentication flow
+    if (error.response.status === 401) { 
+      alert("Authentication failed. Please check your token.");
+}
   }
   return Promise.reject(error);
 });

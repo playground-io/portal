@@ -1,12 +1,12 @@
 <template>
   <footer class="footer-container">
-    <RunningTasks />
+    <SlidingDrawer />
     <StatusBar />
   </footer>
 </template>
 
 <script setup>
-  import RunningTasks from '@/components/layout/RunningTasks.vue';
+  import SlidingDrawer from '@/components/layout/SlidingDrawer.vue';
   import StatusBar from '@/components/layout/StatusBar.vue';
 </script>
 
