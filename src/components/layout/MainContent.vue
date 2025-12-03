@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
     <div class="thediv">
-      <weather />
+      
       <AppLang />
       <p>The Space {{ store.bottomHeight  }}</p>
       <p>{{loading}}</p>

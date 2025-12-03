@@ -116,7 +116,6 @@
 
 <template>
   <div class="splitter"
-    :class="{ 'locked': isLocked }"
     @mousedown="startDrag"
   >
     <div class="splitter-handle"></div>
@@ -124,46 +123,34 @@
 </template>
 
 <style lang=scss scoped>
-.splitter {
+#app.resizing {
   user-select: none;
-  border-top: 1px solid var(--color-border);
-  height: var(--splitter-height);
-  //background-color: var(--color-border, #5e90f4);
-  cursor: row-resize;
+}
+
+.splitter {
   display: flex;
-  align-items: top;
   justify-content: center;
+  align-items: center;
   flex-shrink: 0;
-  transition: background-color 0.15s;
-}
+  height: 100%;
+  cursor: row-resize;
+  background-color: var(--splitter-bg);
+  transition: background-color var(--transition-fast) ease;
 
-.splitter:hover, .splitter:active {
-  background-color: var(--color-primary-hover, #d36434);
-}
+  &:hover, &:active {
+    background-color: var(--splitter-bg-hover);
+  }
 
-.splitter.locked {
-  cursor: default;
-  background-color: #345391;
-  border-top: 1px solid var(--color-border, #e5e7eb);
-}
+  & .splitter-handle {
+    width: 128px;
+    height: 2px;
+    background-color: var(--splitter-handle-bg);;
+    border-radius: 2px;
+    transition: background-color var(--transition-fast) ease;
+  }
 
-.splitter.locked:hover {
-  background-color: #f3f4f6; 
-}
-
-.splitter-handle {
-  width: 48px;
-  height: 2px;
-  background-color: #d1d5db;
-  border-radius: 4px;
-  transition: background-color 0.15s;
-}
-
-.splitter:hover .splitter-handle {
-  background-color: white;
-}
-
-.splitter.locked .splitter-handle {
-  display: none;
+  &:hover .splitter-handle {
+    background-color: var(--splitter-handle-bg-hover);
+  }
 }
 </style>
