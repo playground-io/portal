@@ -26,6 +26,7 @@
   });
   
 // Define Emits
+  
 const emit = defineEmits(['update:modelValue', 'dragStart', 'dragEnd']);
 
 // Internal State
@@ -124,7 +125,6 @@ body.resizing {
 }
 
 .splitter {
-  user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;

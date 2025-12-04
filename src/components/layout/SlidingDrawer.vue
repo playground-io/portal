@@ -15,19 +15,11 @@ const splitterStore = useSplitterStore();
 
 <style lang="scss" scoped>
 .sliding-drawer {
-  //position: relative;
   width: 100%;
   background-color: rgb(255, 255, 255);
   overflow-y: auto;
   
-  
   & > .frame-holder {
-    /*position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom:10px;
-    right: 10px;    
-    border-radius: 4px;*/
     margin: 10px;
     background-color: white;
   }

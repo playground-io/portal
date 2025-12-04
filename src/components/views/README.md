@@ -19,7 +19,3 @@ src/
     ├── HomeView.vue         <-- Route: /
     ├── ProductsView.vue     <-- Route: /products
     └── UserProfileView.vue  <-- Route: /profile/:id
-
-
-    npm install eslint eslint-plugin-vue --save-dev
-    npx eslint --init
