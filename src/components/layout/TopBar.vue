@@ -4,6 +4,10 @@
   import UserAccount from '@/components/feature/UserAccount.vue';
   import TopBarBranding from '@/components/core/TopBarBranding.vue';
   import { useTasksStore } from '@/stores/taksStore.js';
+  
+  import { useLayoutStore } from '@/stores/useLayoutStore';
+
+  const layoutStore = useLayoutStore();
 
   const store = useTasksStore();
 
@@ -30,7 +34,7 @@
       <TopBarButton label="portal-shell" :tooltip="$t('nav.button.console')" mode="toggle" iconName="console"
         @click="handleNavigation('profile')" />
       <TopBarButton label="running-tasks" :tooltip="$t('nav.button.tasks')" mode="toggle" iconName="tasks"
-        @click="handleNavigation()" />
+        @click="layoutStore.setLayouExtended" />
       <TopBarButton label="notifications" :tooltip="$t('nav.button.notifications')" mode="tab" iconName="notifications"
         @click="handleNavigation('profile')" />
       <TopBarButton label="settings" :tooltip="$t('nav.button.settings')" mode="tab" iconName="settings"

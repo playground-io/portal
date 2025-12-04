@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-  import SlidingDrawer from '@/components/layout/SlidingDrawer.vue';
+  import SlidingDrawer from '@/components/extension/SlidingDrawer.vue';
   import StatusBar from '@/components/layout/StatusBar.vue';
 </script>
 

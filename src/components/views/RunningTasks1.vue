@@ -51,7 +51,7 @@
 <script setup>
 
 import { ref, watch } from 'vue';
-import Splitter from '@/components/app/AppSplitterH.vue'
+import Splitter from '@/components/framework/AppSeparator.vue'
   import { useTasksStore } from '@/stores/taksStore.js';
 
   const store = useTasksStore();

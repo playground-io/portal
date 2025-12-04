@@ -13,21 +13,14 @@
   ];
   // -------------------------
   
-  // Define Props
-  const props = defineProps({
-    modelValue: {
-      type: Number,
-      required: true
-    },
-    isLocked: {
-      type: Boolean,
-      default: false
-    }
-  });
-  
-// Define Emits
-  
-const emit = defineEmits(['update:modelValue', 'dragStart', 'dragEnd']);
+
+const appElement = document.getElementById('app');
+if (appElement) {
+    // Add the class to the root element's class list
+    console.log("Class 'my-new-class' added to #app.");
+} else {
+    console.error("Element with ID 'app' not found in the DOM.");
+}
 
 // Internal State
 const isDragging = ref(false);
@@ -40,12 +33,14 @@ const startDrag = (e) => {
   startHeight.value = splitterStore.bottomHeight;
 console.log(startY.value, isDragging.value, startHeight.value);
   // Add styling to body to prevent text selection
-  document.body.classList.add('resizing');
+  appElement.classList.add('resizing');
+
+//  document.body.classList.add('resizing');
 
   // Attach global listeners
   document.addEventListener('mousemove', onDrag);
   document.addEventListener('mouseup', stopDrag);
-  emit('dragStart');
+  //emit('dragStart');
 };
 
 /*  const onDrag = (e) => {
@@ -84,8 +79,9 @@ const onDrag = (e) => {
   // Ensure newHeight respects hard min/max constraints
   const finalHeight = Math.max(minHeight, Math.min(maxHeight, newHeight));
   // 3. Update Model
-  if (props.modelValue !== finalHeight) {
-    emit('update:modelValue', finalHeight);
+  //if (props.modelValue !== finalHeight) {
+  if (splitterStore.getBottomHeight !== finalHeight) {
+    //emit('update:modelValue', finalHeight);
     splitterStore.setBottomHeight(finalHeight);
   }
   console.log('log',splitterStore.bottomHeight);
@@ -94,8 +90,9 @@ const onDrag = (e) => {
 const stopDrag = () => {
   if (isDragging.value) {
     isDragging.value = false;
-    document.body.classList.remove('resizing');
-    emit('dragEnd');
+    //document.body.classList.remove('resizing');
+    appElement.classList.remove('resizing');
+    //emit('dragEnd');
   }
 
   // Clean up listeners
@@ -120,9 +117,7 @@ onUnmounted(
 </template>
 
 <style lang=scss scoped>
-body.resizing {
-  user-select: none;
-}
+
 
 .splitter {
   display: flex;

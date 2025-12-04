@@ -1,12 +1,17 @@
 <script setup>
 import RunningTasks from '@/components/views/RunningTasks.vue';
 import { useSplitterStore } from '@/stores/useSplitterStore';
+import { useLayoutStore } from '@/stores/useLayoutStore';
 
+const layoutStore = useLayoutStore();
 const splitterStore = useSplitterStore();
 </script>
 
 <template>
-  <div class="sliding-drawer" :style="{ height: splitterStore.getBottomHeight + 'px' }">
+  <div class="sliding-drawer"
+    :style="{ height: splitterStore.getBottomHeight + 'px' }"
+    v-if="layoutStore.isExtended"
+  >
     <div class="frame-holder">
       <RunningTasks />
     </div>

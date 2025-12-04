@@ -20,6 +20,10 @@ html, body, #app {
   max-width: 100%;
 }
 
+#app.resizing {
+  user-select: none;
+}
+
 *,
 *::before,
 *::after {

@@ -1,24 +1,35 @@
 <script setup>
-  import AppHeader from '@/components/app/AppHeader.vue';
-  import AppContent from '@/components/app/AppContent.vue';
-  import AppSplitterH from '@/components/app/AppSplitterH.vue';
-  import AppFooter from '@/components/app/AppFooter.vue';
+import LayoutHeader from '@/components/framework/AppHeader.vue';
+import LayoutContent from '@/components/framework/AppContent.vue';
+import LayoutSplitterH from '@/components/framework/AppSeparator.vue';
+import LayoutFooter from '@/components/framework/ShellFooter.vue';
+
+import { useLayoutStore } from '@/stores/useLayoutStore';
+
+const layoutStore = useLayoutStore();
 </script>
 
 <template>
-  <div class="global-container">
-    <AppHeader />
-    <AppContent />
-    <AppSplitterH />
-    <AppFooter />
+  <div
+    class="global-container"
+    :class="{ 'extended': layoutStore.isExtended }"
+  >
+    <LayoutHeader />
+    <LayoutContent />
+    <LayoutSplitterH v-if="layoutStore.isExtended"/>
+    <LayoutFooter />
   </div>
 </template>
 
 <style lang="scss" scoped>
-  .global-container {
-    display: grid;
+.global-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  height: 100%;
+
+  &.extended {
     grid-template-rows: auto 1fr 4px auto;
-    grid-template-columns: 1fr;
-    height: 100%;
   }
+}
 </style>
