@@ -1,3 +1,7 @@
+<script setup>
+import ShowIcon from '@/components/core/ShowIcon.vue';
+</script>
+
 <template>
   <div class="bottom-bar">
     <div class="bottom-bar-left">
@@ -13,36 +17,26 @@
   </div>
 </template>
 
-<script setup>
-  import ShowIcon from '@/components/core/ShowIcon.vue';
-</script>
+<style lang="scss" scoped>
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top: 1px solid var(--status-bar-border);
+  background-color: var(--status-bar-bg);
+  color: var(--status-bar-txt);
+  height: var(--status-bar-height);
+}
 
-<style scoped>
-  .bottom-bar {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    /*border-top: 1px solid var(--bottom-bar-bg);
-    /*background-color: var(--bottom-bar-bg);*/
-    color: var(--bottom-bar-txt);
-    height: var(--bottom-bar-height);
-    transition: background-color var(--transition-fast) ease;
-  }
+.bottom-bar-left,
+.bottom-bar-center,
+.bottom-bar-right {
+  display: flex;
+  align-items: center;
+}
 
-  .bottom-bar:hover {
-    background-color: var(--bottom-bar-bg);
-  }
-
-  .bottom-bar-left,
-  .bottom-bar-center,
-  .bottom-bar-right {
-    display: flex;
-    align-items: center;
-  }
-
-  .bottom-bar-left {
-    gap: 8px;
-    font-weight: 600;
-    color: red;
-  }
+.bottom-bar-left {
+  gap: 8px;
+  font-weight: 600;
+}
 </style>

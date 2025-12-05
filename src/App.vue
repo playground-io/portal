@@ -1,8 +1,8 @@
 <script setup>
-import LayoutHeader from '@/components/framework/AppHeader.vue';
-import LayoutContent from '@/components/framework/AppContent.vue';
-import LayoutSplitterH from '@/components/framework/AppSeparator.vue';
-import LayoutFooter from '@/components/framework/ShellFooter.vue';
+import AppHeader from '@/components/framework/AppHeader.vue';
+import AppContent from '@/components/framework/AppContent.vue';
+import AppSeparator from '@/components/framework/AppSeparator.vue';
+import AppFooter from '@/components/framework/AppFooter.vue';
 
 import { useLayoutStore } from '@/stores/useLayoutStore';
 
@@ -14,10 +14,10 @@ const layoutStore = useLayoutStore();
     class="global-container"
     :class="{ 'extended': layoutStore.isExtended }"
   >
-    <LayoutHeader />
-    <LayoutContent />
-    <LayoutSplitterH v-if="layoutStore.isExtended"/>
-    <LayoutFooter />
+    <AppHeader />
+    <AppContent />
+    <AppSeparator v-if="layoutStore.isExtended"/>
+    <AppFooter />
   </div>
 </template>
 
@@ -29,7 +29,7 @@ const layoutStore = useLayoutStore();
   height: 100%;
 
   &.extended {
-    grid-template-rows: auto 1fr 4px auto;
+    grid-template-rows: auto 1fr 6px auto;
   }
 }
 </style>

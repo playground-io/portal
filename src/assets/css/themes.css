@@ -45,11 +45,13 @@
   --search-text-color: #2c2c2c;
 
   --splitter-bar-bg: rgb(224, 224, 224);
+  
+  /* status bar */
+  --status-bar-border: #aaa;
+  --status-bar-bg: #eee;
+  --status-bar-txt: #1c1c1c;
 
-  --bottom-bar-bg: #b1b1b1;
-  --bottom-bar-txt: #1c1c1c;
-
-  /*Splitter */
+  /* splitter */
   --splitter-bg: rgb(210, 210, 210);
   --splitter-bg-hover: rgb(120, 120, 120);
   --splitter-handle-bg: rgb(120, 120, 120);

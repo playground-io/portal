@@ -1,15 +1,3 @@
-<template>
-  <div class="main-content">
-    <div class="thediv">
-      
-      <AppLang />
-      <p>The Space {{ store.bottomHeight  }}</p>
-      <p>{{loading}}</p>
-      <p>{{user}}</p>
-    </div>
-  </div>
-</template>
-
 <script setup>
   import {ref, onMounted} from 'vue';
   import {useTasksStore} from '@/stores/taksStore.js';
@@ -48,6 +36,18 @@
   console.log( store.bottomHeight );
 
 </script>
+
+<template>
+  <div class="main-content">
+    <div class="thediv">
+      
+      <AppLang />
+      <p>The Space {{ store.bottomHeight  }}</p>
+      <p>{{loading}}</p>
+      <p>{{user}}</p>
+    </div>
+  </div>
+</template>
 
 <style scoped>
   .main-content {  

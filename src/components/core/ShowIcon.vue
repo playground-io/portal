@@ -1,3 +1,23 @@
+<script setup>
+import { computed } from 'vue'; 
+import ICON_REGISTRY from '@/assets/icons/icon-registry.json';
+
+const props = defineProps({
+  name: {
+    type: String,
+    required: true
+  },
+  size: {
+    type: Number,
+    default: 24
+  }
+});
+
+const iconPath = computed(() => {
+  return ICON_REGISTRY[props.name] || '<!-- Icon not found -->';
+});
+</script>
+
 <template>
   <svg class="show-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -8,35 +28,15 @@
   </svg>
 </template>
 
-<script setup>
-  import { computed } from 'vue'; 
-  import ICON_REGISTRY from '@/assets/icons/icon-registry.json';
-
-  const props = defineProps({
-    name: {
-      type: String,
-      required: true
-    },
-    size: {
-      type: Number,
-      default: 24
-    }
-  });
-
-  const iconPath = computed(() => {
-    return ICON_REGISTRY[props.name] || '<!-- Icon not found -->';
-  });
-</script>
-
-<style scoped>
-  .show-icon {
-    display: block;
-    margin: auto;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    clip-rule: evenodd;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-  }
+<style lang="scss" scoped>
+.show-icon {
+  display: block;
+  margin: auto;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  clip-rule: evenodd;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
 </style>

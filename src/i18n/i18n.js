@@ -2,7 +2,7 @@ import { createI18n } from 'vue-i18n';
 
 // Get the user's preferred browser locale (e.g., 'en-US' -> 'en')
 const initialLocale = localStorage.getItem('locale') || navigator.language.split('-')[0] || 'en';
-console.log(localStorage.getItem('locale') );
+
 // Initialize the i18n instance
 const i18n = createI18n({
   // Use Composition API mode (required for useI18n())
